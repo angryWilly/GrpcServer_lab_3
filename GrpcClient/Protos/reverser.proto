@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+service Reverser {
+	rpc GetReversedText (ReverserRequest) returns (ReverserReply);
+}
+
+message ReverserRequest {
+	string textToReverse = 1;
+}
+
+message ReverserReply {
+	string reversedOnlyWords = 1;
+	string reversedAllText = 2;
+}
